@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #f5f6f8;
+  color: #222;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #1e2a38;
+  color: white;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#searchInput {
+  padding: 7px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+#exploreBtn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  color: black;
+  top: 30px;
+  right: 0;
+  padding: 15px;
+  width: 200px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.dropdown-group {
+  margin-bottom: 10px;
+}
+
+.dropdown-content a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  color: white;
+  text-decoration: none;
+  background: #3b82f6;
+  padding: 7px 12px;
+  border-radius: 5px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* SUBJECT PILLS */
+.subjects {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.pill {
+  padding: 8px 15px;
+  background: #e0e7ff;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* PAPER CARDS */
+.papers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 40px 40px;
+}
+
+.paper-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.paper-card h3 {
+  margin-top: 0;
+}
+
+.subject {
+  font-size: 13px;
+  color: #555;
+}
