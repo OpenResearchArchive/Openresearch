@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,13 +10,15 @@
 
 <style>
 
+/* GENERAL /
+
 body{
 font-family:Arial, Helvetica, sans-serif;
 margin:0;
 background:white;
 }
 
-/* NAVBAR /
+/ NAVBAR /
 
 .navbar{
 background:#7a0019;
@@ -72,7 +76,7 @@ color:#7a0019;
 margin-bottom:30px;
 }
 
-/ PUBLICATION CARDS /
+/ CARDS /
 
 .card{
 border:1px solid #ddd;
@@ -89,19 +93,24 @@ font-weight:bold;
 font-size:18px;
 }
 
-/ LOGOS /
+.card a:hover{
+text-decoration:underline;
+}
+
+/ LOGO ROW /
 
 .logo-row{
 display:flex;
 gap:30px;
-margin-top:15px;
+margin-top:10px;
+margin-bottom:20px;
 }
 
 .logo-row img{
 height:40px;
 }
 
-/ CITATION /
+/ CITATIONS /
 
 .citation{
 font-size:14px;
@@ -168,7 +177,9 @@ width:90%;
 }
 
 </style>
+
 </head>
+
 
 <body>
 
@@ -182,17 +193,26 @@ width:90%;
 
 <div class="menu" id="menu">
 <a href="#articles">Articles</a>
-<a href="#research">Research</a>
+<a href="#research">Research Papers</a>
 <a href="#about">About</a>
 </div>
 
 </div>
 
+
 <!-- SEARCH BAR -->
 
 <div class="search">
-<input type="text" id="searchInput" placeholder="Search articles or research papers..." onkeyup="searchContent()">
+
+<input 
+type="text"
+id="searchInput"
+placeholder="Search articles or research papers..."
+onkeyup="searchContent()"
+>
+
 </div>
+
 
 <!-- ARTICLES -->
 
@@ -201,11 +221,16 @@ width:90%;
 <h2>Newspaper Articles</h2>
 
 <div class="logo-row">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/The_New_York_Times_logo.png">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/The_Guardian_2018_logo.svg">
+
 </div>
 
+
 <div class="card">
+
 <a href="https://example.com/article1" target="_blank">
 The Economics of Modern Warfare
 </a>
@@ -221,6 +246,7 @@ Author Name. "The Economics of Modern Warfare." National Newspaper, 2026.
 </div>
 
 </div>
+
 
 <div class="card">
 
@@ -242,6 +268,7 @@ Author Name. "Energy Security and Global Conflict." National Newspaper, 2025.
 
 </div>
 
+
 <!-- RESEARCH PAPERS -->
 
 <div class="section" id="research">
@@ -249,9 +276,13 @@ Author Name. "Energy Security and Global Conflict." National Newspaper, 2025.
 <h2>Research Papers</h2>
 
 <div class="logo-row">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Springer_logo.svg">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Elsevier_logo.svg">
+
 </div>
+
 
 <div class="card">
 
@@ -272,6 +303,7 @@ Author Name. "Defense Economics and Strategic Deterrence." International Journal
 </div>
 
 </div>
+
 
 <div class="card">
 
@@ -295,7 +327,8 @@ Author Name. "Geopolitics of Energy Supply Chains." Global Policy Review, 2024.
 
 </div>
 
-<!-- CITATION TOGGLE -->
+
+<!-- CITATION STYLE -->
 
 <div class="section">
 
@@ -306,7 +339,8 @@ Author Name. "Geopolitics of Energy Supply Chains." Global Policy Review, 2024.
 
 </div>
 
-<!-- ABOUT -->
+
+<!-- ABOUT AUTHOR -->
 
 <div class="section" id="about">
 
@@ -314,18 +348,22 @@ Author Name. "Geopolitics of Energy Supply Chains." Global Policy Review, 2024.
 
 <div class="about">
 
-<img src="author.jpg">
+<img src="author.jpg" alt="Author Photo">
 
 <p>
-This author publishes analytical articles in national newspapers and academic
-research papers on economics, geopolitics, and defense economics. His work
-focuses on the economic drivers of conflict, energy security, and global
-strategic policy.
+
+This author publishes analytical articles in national newspapers and
+academic research papers on economics, geopolitics, and defense economics.
+
+His work focuses on the economic drivers of conflict, global strategic
+policy, and energy security.
+
 </p>
 
 </div>
 
 </div>
+
 
 <!-- FOOTER -->
 
@@ -340,19 +378,24 @@ All rights reserved.
 
 </footer>
 
+
 <script>
 
 / BURGER MENU /
 
 function toggleMenu(){
+
 document.getElementById("menu").classList.toggle("show");
+
 }
+
 
 / SEARCH FUNCTION /
 
 function searchContent(){
 
 let input=document.getElementById("searchInput").value.toLowerCase();
+
 let cards=document.querySelectorAll(".card");
 
 cards.forEach(card=>{
@@ -360,28 +403,41 @@ cards.forEach(card=>{
 let text=card.innerText.toLowerCase();
 
 if(text.includes(input)){
+
 card.style.display="block";
+
 }else{
+
 card.style.display="none";
+
 }
 
 });
 
 }
 
-/ CITATION TOGGLE */
+
+/ CITATION STYLE */
 
 function showAPA(){
+
 document.querySelectorAll(".citation").forEach(c=>c.style.display="none");
+
 document.querySelectorAll(".apa").forEach(c=>c.style.display="block");
+
 }
 
 function showMLA(){
+
 document.querySelectorAll(".citation").forEach(c=>c.style.display="none");
+
 document.querySelectorAll(".mla").forEach(c=>c.style.display="block");
+
 }
 
 </script>
 
+
 </body>
+
 </html>
