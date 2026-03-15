@@ -3,135 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Author Portfolio</title>
 
 <style>
 
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:white;
+font-family:Arial, Helvetica, sans-serif;
+margin:0;
+background:white;
 }
 
-/* NAVBAR */
+/* NAVBAR /
 
 .navbar{
-    background:#7a0019;
-    color:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 25px;
+background:#7a0019;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
 }
 
 .logo{
-    font-size:22px;
-    font-weight:bold;
+font-size:22px;
+font-weight:bold;
 }
 
 .menu{
-    display:flex;
-    gap:20px;
+display:flex;
+gap:25px;
 }
 
 .menu a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
+color:white;
+text-decoration:none;
+font-weight:bold;
 }
 
 .burger{
-    display:none;
-    font-size:24px;
-    cursor:pointer;
+display:none;
+font-size:25px;
+cursor:pointer;
 }
 
-/* SEARCH BAR */
+/ SEARCH /
 
-.search-container{
-    text-align:center;
-    padding:30px;
+.search{
+text-align:center;
+padding:35px;
 }
 
-.search-container input{
-    width:60%;
-    padding:12px;
-    border:2px solid #7a0019;
-    border-radius:5px;
+.search input{
+width:60%;
+padding:12px;
+border:2px solid #7a0019;
+border-radius:6px;
 }
 
-/* SECTIONS */
+/ SECTIONS /
 
 .section{
-    padding:50px;
+padding:50px 12%;
 }
 
 .section h2{
-    color:#7a0019;
+color:#7a0019;
+margin-bottom:30px;
 }
 
-/* ARTICLES */
+/ PUBLICATION CARDS /
 
 .card{
-    border:1px solid #ddd;
-    padding:20px;
-    margin:15px 0;
-    border-left:5px solid #7a0019;
+border:1px solid #ddd;
+padding:20px;
+margin-bottom:18px;
+border-left:6px solid #7a0019;
+background:#fafafa;
 }
 
-/* ABOUT AUTHOR */
+.card a{
+text-decoration:none;
+color:#7a0019;
+font-weight:bold;
+font-size:18px;
+}
+
+/ LOGOS /
+
+.logo-row{
+display:flex;
+gap:30px;
+margin-top:15px;
+}
+
+.logo-row img{
+height:40px;
+}
+
+/ CITATION /
+
+.citation{
+font-size:14px;
+margin-top:10px;
+color:#555;
+display:none;
+}
+
+/ ABOUT /
 
 .about{
-    display:flex;
-    align-items:center;
-    gap:30px;
+display:flex;
+gap:40px;
+align-items:center;
 }
 
 .about img{
-    width:200px;
-    border-radius:10px;
+width:200px;
+border-radius:10px;
 }
 
-/* FOOTER */
+/ FOOTER /
 
 footer{
-    background:#7a0019;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:50px;
+background:#7a0019;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
 }
 
-/* MOBILE */
+/ MOBILE /
 
 @media(max-width:768px){
 
 .menu{
-    display:none;
-    flex-direction:column;
-    background:#7a0019;
-    position:absolute;
-    top:60px;
-    right:0;
-    width:200px;
-    padding:20px;
+display:none;
+flex-direction:column;
+background:#7a0019;
+position:absolute;
+top:60px;
+right:0;
+width:200px;
+padding:20px;
 }
 
 .menu.show{
-    display:flex;
+display:flex;
 }
 
 .burger{
-    display:block;
+display:block;
 }
 
 .about{
-    flex-direction:column;
-    text-align:center;
+flex-direction:column;
+text-align:center;
 }
 
-.search-container input{
-    width:90%;
+.search input{
+width:90%;
 }
 
 }
@@ -151,55 +182,131 @@ footer{
 
 <div class="menu" id="menu">
 <a href="#articles">Articles</a>
-<a href="#research">Research Papers</a>
+<a href="#research">Research</a>
 <a href="#about">About</a>
 </div>
 
 </div>
 
-<!-- SEARCH -->
+<!-- SEARCH BAR -->
 
-<div class="search-container">
-<input type="text" placeholder="Search articles or research papers...">
+<div class="search">
+<input type="text" id="searchInput" placeholder="Search articles or research papers..." onkeyup="searchContent()">
 </div>
 
 <!-- ARTICLES -->
 
 <div class="section" id="articles">
 
-<h2>Published Articles</h2>
+<h2>Newspaper Articles</h2>
 
-<div class="card">
-<h3>Article Title</h3>
-<p>Published in National Newspaper</p>
+<div class="logo-row">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/The_New_York_Times_logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/The_Guardian_2018_logo.svg">
 </div>
 
 <div class="card">
-<h3>Article Title</h3>
+<a href="https://example.com/article1" target="_blank">
+The Economics of Modern Warfare
+</a>
+
 <p>Published in National Newspaper</p>
+
+<div class="citation apa">
+Author Name. (2026). The Economics of Modern Warfare. National Newspaper.
+</div>
+
+<div class="citation mla">
+Author Name. "The Economics of Modern Warfare." National Newspaper, 2026.
 </div>
 
 </div>
 
-<!-- RESEARCH -->
+<div class="card">
+
+<a href="https://example.com/article2" target="_blank">
+Energy Security and Global Conflict
+</a>
+
+<p>Published in National Newspaper</p>
+
+<div class="citation apa">
+Author Name. (2025). Energy Security and Global Conflict. National Newspaper.
+</div>
+
+<div class="citation mla">
+Author Name. "Energy Security and Global Conflict." National Newspaper, 2025.
+</div>
+
+</div>
+
+</div>
+
+<!-- RESEARCH PAPERS -->
 
 <div class="section" id="research">
 
 <h2>Research Papers</h2>
 
-<div class="card">
-<h3>Research Paper Title</h3>
-<p>Journal / University</p>
+<div class="logo-row">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Springer_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Elsevier_logo.svg">
 </div>
 
 <div class="card">
-<h3>Research Paper Title</h3>
-<p>Journal / University</p>
+
+<a href="paper1.pdf" target="_blank">
+Defense Economics and Strategic Deterrence
+</a>
+
+<p>International Journal of Economics</p>
+
+<a href="paper1.pdf" download>Download PDF</a>
+
+<div class="citation apa">
+Author Name. (2025). Defense Economics and Strategic Deterrence. International Journal of Economics.
+</div>
+
+<div class="citation mla">
+Author Name. "Defense Economics and Strategic Deterrence." International Journal of Economics, 2025.
 </div>
 
 </div>
 
-<!-- ABOUT AUTHOR -->
+<div class="card">
+
+<a href="paper2.pdf" target="_blank">
+Geopolitics of Energy Supply Chains
+</a>
+
+<p>Global Policy Review</p>
+
+<a href="paper2.pdf" download>Download PDF</a>
+
+<div class="citation apa">
+Author Name. (2024). Geopolitics of Energy Supply Chains. Global Policy Review.
+</div>
+
+<div class="citation mla">
+Author Name. "Geopolitics of Energy Supply Chains." Global Policy Review, 2024.
+</div>
+
+</div>
+
+</div>
+
+<!-- CITATION TOGGLE -->
+
+<div class="section">
+
+<h2>Citation Style</h2>
+
+<button onclick="showAPA()">APA</button>
+<button onclick="showMLA()">MLA</button>
+
+</div>
+
+<!-- ABOUT -->
 
 <div class="section" id="about">
 
@@ -207,12 +314,13 @@ footer{
 
 <div class="about">
 
-<img src="author.jpg" alt="Author Photo">
+<img src="author.jpg">
 
 <p>
-The author writes articles for national newspapers and publishes research
-papers on economics, geopolitics and public policy. His work focuses on
-analyzing global conflicts, economic strategy and defense economics.
+This author publishes analytical articles in national newspapers and academic
+research papers on economics, geopolitics, and defense economics. His work
+focuses on the economic drivers of conflict, energy security, and global
+strategic policy.
 </p>
 
 </div>
@@ -224,14 +332,53 @@ analyzing global conflicts, economic strategy and defense economics.
 <footer>
 
 <p>© 2026 Author Name</p>
-<p>Articles and research papers published in national and international outlets.</p>
+
+<p>
+Articles published in national newspapers and academic journals.
+All rights reserved.
+</p>
 
 </footer>
 
 <script>
 
+/ BURGER MENU /
+
 function toggleMenu(){
 document.getElementById("menu").classList.toggle("show");
+}
+
+/ SEARCH FUNCTION /
+
+function searchContent(){
+
+let input=document.getElementById("searchInput").value.toLowerCase();
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let text=card.innerText.toLowerCase();
+
+if(text.includes(input)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+
+});
+
+}
+
+/ CITATION TOGGLE */
+
+function showAPA(){
+document.querySelectorAll(".citation").forEach(c=>c.style.display="none");
+document.querySelectorAll(".apa").forEach(c=>c.style.display="block");
+}
+
+function showMLA(){
+document.querySelectorAll(".citation").forEach(c=>c.style.display="none");
+document.querySelectorAll(".mla").forEach(c=>c.style.display="block");
 }
 
 </script>
