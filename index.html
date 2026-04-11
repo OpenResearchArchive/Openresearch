@@ -1,31 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Student Voices</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Voices Magazine</title>
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== CONTRAST SECTIONS (INLINE FOR EASY USE) ===== */
+
+.light-section {
+  background: #ffffff;
+  color: #222;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.soft-section {
+  background: #f7f7f7;
+  color: #222;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.gradient-section {
+  background: linear-gradient(135deg, #1a0000, #3a0000, #6b0000);
+  color: #f5f5f5;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.checklist {
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+}
+
+.checklist p {
+  margin: 18px 0;
+  line-height: 1.6;
+}
+
+.checklist p::before {
+  content: "✔";
+  margin-right: 12px;
+  color: #aaa;
+}
+</style>
+
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-<h1>Student Voices Magazine</h1>
-<p>Monthly Student Opinion Publication</p>
+  <h1>Student Voices Magazine</h1>
+  <p>Monthly Student Opinion Publication</p>
 </header>
 
+<!-- NAV -->
 <nav>
-<a href="index.html">Home</a>
-<a href="articles.html">Articles</a>
-<a href="submit.html">Submit</a>
+  <a href="index.html">Home</a>
+  <a href="articles.html">Articles</a>
+  <a href="submit.html">Submit</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-<h1>Speak. Write. Inspire.</h1>
-<p>Amplifying student voices across the world.</p>
-<a href="submit.html" class="btn">Submit an Article</a>
+  <h1>Speak. Write. Inspire.</h1>
+  <p>Amplifying student voices across the world.</p>
+  <a href="submit.html" class="btn">Submit an Article</a>
 </section>
 
-<section class="gradient-section">
+<!-- WHAT WE DO (LIGHT SECTION) -->
+<section class="light-section">
 
   <h2>What We Do</h2>
 
@@ -39,7 +88,7 @@
 
 </section>
 
-
+<!-- ABOUT US (DARK SECTION) -->
 <section class="gradient-section">
 
   <h2>About Us</h2>
@@ -54,8 +103,16 @@
 
 </section>
 
+<!-- CTA SECTION -->
+<section class="soft-section">
+  <h2>Get Published</h2>
+  <p>Submit your article and become part of a growing community of student writers.</p>
+  <a href="submit.html" class="btn">Submit Now</a>
+</section>
+
+<!-- FOOTER -->
 <footer>
-<p>© 2026 Student Voices Magazine</p>
+  <p>© 2026 Student Voices Magazine | Published Monthly</p>
 </footer>
 
 </body>
