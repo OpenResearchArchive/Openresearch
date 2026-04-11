@@ -1,43 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Submit Article</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Submit Article</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<nav class="navbar">
-  <div class="logo">Student Research Journal</div>
-  <a class="submit-btn" href="index.html">Home</a>
+<header>
+<h1>Submit Your Article</h1>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="articles.html">Articles</a>
+<a href="submit.html">Submit</a>
 </nav>
 
-<section class="hero">
-  <h1>Submit Your Article</h1>
-  <p>Submit original student research or academic notes.</p>
-</section>
+<div class="container">
 
-<section class="papers">
-  <form class="paper-card">
-    <label>Title</label>
-    <input type="text" required>
+<h2>We welcome student voices</h2>
 
-    <label>Author Name</label>
-    <input type="text" required>
+<iframe 
+  src="YOUR_GOOGLE_FORM_EMBED_LINK"
+  width="100%" 
+  height="650">
+</iframe>
 
-    <label>Subject</label>
-    <select>
-      <option>Economics</option>
-      <option>Physics</option>
-      <option>History</option>
-    </select>
+</div>
 
-    <label>Abstract</label>
-    <textarea rows="5"></textarea>
-
-    <button class="submit-btn" type="submit">Submit</button>
-  </form>
-</section>
+<footer>
+<p>© 2026 Student Voices</p>
+</footer>
 
 </body>
 </html>
