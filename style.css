@@ -213,3 +213,31 @@ footer {
     font-size: 2rem;
   }
 }
+/* LIGHT SECTION (breaks the red) */
+.light-section {
+  background: #ffffff;
+  color: #222;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Softer alternate section */
+.soft-section {
+  background: #f7f7f7;
+  color: #222;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Dark section (keep but reduce intensity) */
+.gradient-section {
+  background: linear-gradient(135deg, #1a0000, #3a0000, #6b0000);
+  color: #f5f5f5;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+/* Make checklist text slightly lighter */
+.checklist p {
+  opacity: 0.9;
+}
