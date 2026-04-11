@@ -1,147 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Voices Magazine</title>
-
-<style>
-:root {
-  --maroon: #6b0000;
-  --accent: #a52a2a;
-  --paper: #fdfaf6;
-}
-
-body {
-  margin: 0;
-  font-family: "Georgia", serif;
-  background: #fafafa;
-  color: #222;
-}
-
-/* HEADER */
-header {
-  background: var(--maroon);
-  color: white;
-  text-align: center;
-  padding: 25px;
-}
-
-nav {
-  background: #4b0000;
-  padding: 10px;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-}
-
-/* HERO */
-.hero {
-  padding: 70px 20px;
-  background: linear-gradient(to right, #6b0000, #a52a2a);
-  color: white;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 3rem;
-}
-
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-/* FEATURED */
-.featured {
-  background: white;
-  padding: 25px;
-  border-left: 6px solid var(--maroon);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  margin-bottom: 40px;
-}
-
-/* CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
-}
-
-.card {
-  background: var(--paper);
-  padding: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.tag {
-  font-size: 0.7rem;
-  background: var(--maroon);
-  color: white;
-  padding: 3px 8px;
-  display: inline-block;
-  margin-bottom: 8px;
-}
-
-/* ISSUE */
-.issue {
-  background: white;
-  padding: 20px;
-  margin-top: 20px;
-  border-left: 4px solid var(--accent);
-}
-
-/* ABOUT */
-.about {
-  background: #f4f4f4;
-  padding: 30px;
-  border-radius: 10px;
-}
-
-/* SUBMISSION */
-.submit-box {
-  background: white;
-  padding: 20px;
-  border-left: 5px solid var(--maroon);
-}
-
-/* FOOTER */
-footer {
-  background: var(--maroon);
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  background: rgba(0,0,0,0.7);
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: white;
-  padding: 25px;
-  max-width: 600px;
-}
-</style>
+<title>Student Voices</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -152,117 +14,38 @@ footer {
 </header>
 
 <nav>
-<a href="#home">Home</a>
-<a href="#articles">Articles</a>
-<a href="#issues">Issues</a>
-<a href="#submit">Submit</a>
-<a href="#about">About</a>
+<a href="index.html">Home</a>
+<a href="articles.html">Articles</a>
+<a href="submit.html">Submit</a>
 </nav>
 
 <section class="hero">
 <h1>Speak. Write. Inspire.</h1>
-<p>Selected writers receive a published copy of the magazine.</p>
+<p>Amplifying student voices across the world.</p>
+<a href="submit.html" class="btn">Submit an Article</a>
 </section>
 
 <div class="container">
 
-<!-- FEATURED -->
-<div class="featured">
-<h2>Featured Article</h2>
-<h3 onclick="openArticle('The Power of Youth','Young people are reshaping the global conversation. Their ideas, activism, and writing are redefining the future...')" style="cursor:pointer;">
-The Power of Youth
-</h3>
-<p>By Editorial Team</p>
-</div>
+<h2>What We Do</h2>
+<p>
+We publish student opinions monthly, creating a platform for young voices
+to discuss global issues, ideas, and perspectives.
+</p>
 
-<!-- ARTICLES -->
-<h2 id="articles">Latest Articles</h2>
-
-<div class="cards">
-  <div class="card" onclick="openArticle('Climate Responsibility','Youth must act now to address climate change before it becomes irreversible.')">
-    <div class="tag">Opinion</div>
-    <h3>Climate Responsibility</h3>
-    <p>By Ali</p>
-  </div>
-
-  <div class="card" onclick="openArticle('Education Crisis','Education systems must evolve to meet modern challenges.')">
-    <div class="tag">Politics</div>
-    <h3>Education Crisis</h3>
-    <p>By Sara</p>
-  </div>
-
-  <div class="card" onclick="openArticle('Digital Generation','Social media is shaping how young people think and engage.')">
-    <div class="tag">Culture</div>
-    <h3>Digital Generation</h3>
-    <p>By Ahmed</p>
-  </div>
-</div>
-
-<!-- ISSUES -->
-<h2 id="issues">Monthly Issues</h2>
-
-<div class="issue">
-<h3>March 2026</h3>
-<p>Theme: Youth & Change</p>
-</div>
-
-<div class="issue">
-<h3>February 2026</h3>
-<p>Theme: Education Reform</p>
-</div>
-
-<!-- SUBMIT -->
-<h2 id="submit">Submit Your Article</h2>
-
-<div class="submit-box">
-<p>We welcome submissions from students worldwide.</p>
-
-<iframe 
-  src="YOUR_GOOGLE_FORM_EMBED_LINK"
-  width="100%" 
-  height="650" 
-  frameborder="0">
-</iframe>
-
-<p>Selected writers will receive a published copy of the magazine.</p>
-</div>
-
-<!-- ABOUT -->
-<h2 id="about">About Us</h2>
-
+<h2>About Us</h2>
 <div class="about">
 <p>
-Student Voices Magazine is a student-led monthly publication dedicated to sharing opinions, ideas, and perspectives from young writers around the world.  
-We aim to empower students through writing and meaningful dialogue.
+Student Voices Magazine is a student-led initiative dedicated to empowering
+young writers. Selected contributors receive published copies of the magazine.
 </p>
 </div>
 
 </div>
 
 <footer>
-<p>© 2026 Student Voices Magazine | Published Monthly</p>
+<p>© 2026 Student Voices Magazine</p>
 </footer>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-<div class="modal-content">
-<h2 id="modalTitle"></h2>
-<p id="modalText"></p>
-<button onclick="closeModal()">Close</button>
-</div>
-</div>
-
-<script>
-function openArticle(title, text) {
-  document.getElementById("modal").style.display = "flex";
-  document.getElementById("modalTitle").innerText = title;
-  document.getElementById("modalText").innerText = text;
-}
-
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
-</script>
 
 </body>
 </html>
