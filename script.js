@@ -1,25 +1,9 @@
-const exploreBtn = document.getElementById("exploreBtn");
-const exploreMenu = document.getElementById("exploreMenu");
+function openArticle(title, text) {
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalText").innerText = text;
+}
 
-exploreBtn.addEventListener("click", e => {
-  e.stopPropagation();
-  exploreMenu.style.display =
-    exploreMenu.style.display === "block" ? "none" : "block";
-});
-
-document.addEventListener("click", () => {
-  exploreMenu.style.display = "none";
-});
-
-/* SEARCH */
-const searchInput = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".paper-card");
-
-searchInput.addEventListener("keyup", () => {
-  const filter = searchInput.value.toLowerCase();
-  cards.forEach(card => {
-    card.style.display = card.textContent.toLowerCase().includes(filter)
-      ? "block"
-      : "none";
-  });
-});
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
