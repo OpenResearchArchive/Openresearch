@@ -1,443 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <title>Student Voices Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --maroon: #800000;
+      --light: #ffffff;
+      --paper: #fdfaf6;
+      --shadow: rgba(0,0,0,0.1);
+    }
 
-<title>Author Portfolio</title>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Georgia", serif;
+    }
 
-<style>
+    body {
+      background: var(--light);
+      color: #333;
+    }
 
-/* GENERAL /
+    header {
+      background: var(--maroon);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
 
-body{
-font-family:Arial, Helvetica, sans-serif;
-margin:0;
-background:white;
-}
+    nav {
+      background: #5c0000;
+      padding: 10px;
+      text-align: center;
+    }
 
-/ NAVBAR /
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.navbar{
-background:#7a0019;
-color:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-}
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-.logo{
-font-size:22px;
-font-weight:bold;
-}
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #800000, #a52a2a);
+      color: white;
+    }
 
-.menu{
-display:flex;
-gap:25px;
-}
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
 
-.menu a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
+    .container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-.burger{
-display:none;
-font-size:25px;
-cursor:pointer;
-}
+    h2 {
+      color: var(--maroon);
+      margin-bottom: 20px;
+    }
 
-/ SEARCH /
+    /* Paper Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-.search{
-text-align:center;
-padding:35px;
-}
+    .card {
+      background: var(--paper);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px var(--shadow);
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+    }
 
-.search input{
-width:60%;
-padding:12px;
-border:2px solid #7a0019;
-border-radius:6px;
-}
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
 
-/ SECTIONS /
+    .card h3 {
+      color: var(--maroon);
+      margin-bottom: 10px;
+    }
 
-.section{
-padding:50px 12%;
-}
+    .card p {
+      font-size: 0.9rem;
+    }
 
-.section h2{
-color:#7a0019;
-margin-bottom:30px;
-}
+    /* About */
+    .about {
+      background: #f4f4f4;
+      padding: 40px;
+      border-radius: 10px;
+    }
 
-/ CARDS /
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
-.card{
-border:1px solid #ddd;
-padding:20px;
-margin-bottom:18px;
-border-left:6px solid #7a0019;
-background:#fafafa;
-}
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
 
-.card a{
-text-decoration:none;
-color:#7a0019;
-font-weight:bold;
-font-size:18px;
-}
+    button {
+      background: var(--maroon);
+      color: white;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
 
-.card a:hover{
-text-decoration:underline;
-}
+    button:hover {
+      background: #a52a2a;
+    }
 
-/ LOGO ROW /
+    footer {
+      background: var(--maroon);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
 
-.logo-row{
-display:flex;
-gap:30px;
-margin-top:10px;
-margin-bottom:20px;
-}
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
 
-.logo-row img{
-height:40px;
-}
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+    }
 
-/ CITATIONS /
-
-.citation{
-font-size:14px;
-margin-top:10px;
-color:#555;
-display:none;
-}
-
-/ ABOUT /
-
-.about{
-display:flex;
-gap:40px;
-align-items:center;
-}
-
-.about img{
-width:200px;
-border-radius:10px;
-}
-
-/ FOOTER /
-
-footer{
-background:#7a0019;
-color:white;
-text-align:center;
-padding:25px;
-margin-top:40px;
-}
-
-/ MOBILE /
-
-@media(max-width:768px){
-
-.menu{
-display:none;
-flex-direction:column;
-background:#7a0019;
-position:absolute;
-top:60px;
-right:0;
-width:200px;
-padding:20px;
-}
-
-.menu.show{
-display:flex;
-}
-
-.burger{
-display:block;
-}
-
-.about{
-flex-direction:column;
-text-align:center;
-}
-
-.search input{
-width:90%;
-}
-
-}
-
-</style>
-
+  </style>
 </head>
-
 
 <body>
 
-<!-- NAVBAR -->
+<header>
+  <h1>Student Voices Magazine</h1>
+  <p>Monthly Student Opinions & Perspectives</p>
+</header>
 
-<div class="navbar">
+<nav>
+  <a href="#articles">Articles</a>
+  <a href="#submit">Submit</a>
+  <a href="#about">About</a>
+</nav>
 
-<div class="logo">Author Name</div>
+<section class="hero">
+  <h1>Speak. Write. Inspire.</h1>
+  <p>Your voice matters. Published monthly.</p>
+</section>
 
-<div class="burger" onclick="toggleMenu()">☰</div>
+<div class="container" id="articles">
+  <h2>Latest Articles</h2>
 
-<div class="menu" id="menu">
-<a href="#articles">Articles</a>
-<a href="#research">Research Papers</a>
-<a href="#about">About</a>
+  <div class="cards">
+    <div class="card" onclick="openArticle('The Future of Education', 'Students are redefining learning...')">
+      <h3>The Future of Education</h3>
+      <p>Students are redefining learning...</p>
+    </div>
+
+    <div class="card" onclick="openArticle('Climate & Youth', 'Young voices on climate change...')">
+      <h3>Climate & Youth</h3>
+      <p>Young voices on climate change...</p>
+    </div>
+
+    <div class="card" onclick="openArticle('Social Media Impact', 'How social media shapes opinions...')">
+      <h3>Social Media Impact</h3>
+      <p>How social media shapes opinions...</p>
+    </div>
+  </div>
 </div>
 
+<div class="container" id="submit">
+  <h2>Submit Your Article</h2>
+
+  <form onsubmit="submitForm(event)">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <input type="text" placeholder="Article Title" required>
+    <textarea rows="6" placeholder="Write your article here..." required></textarea>
+    <button type="submit">Submit Article</button>
+  </form>
+
+  <p style="margin-top:10px;">Selected writers will receive a published copy of the magazine.</p>
 </div>
 
+<div class="container" id="about">
+  <h2>About Us</h2>
 
-<!-- SEARCH BAR -->
-
-<div class="search">
-
-<input 
-type="text"
-id="searchInput"
-placeholder="Search articles or research papers..."
-onkeyup="searchContent()"
->
-
+  <div class="about">
+    <p>
+      Student Voices Magazine is a monthly publication dedicated to showcasing
+      student opinions, ideas, and perspectives from across the world.
+      We believe in empowering youth through writing and dialogue.
+    </p>
+  </div>
 </div>
-
-
-<!-- ARTICLES -->
-
-<div class="section" id="articles">
-
-<h2>Newspaper Articles</h2>
-
-<div class="logo-row">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/The_New_York_Times_logo.png">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/The_Guardian_2018_logo.svg">
-
-</div>
-
-
-<div class="card">
-
-<a href="https://example.com/article1" target="_blank">
-The Economics of Modern Warfare
-</a>
-
-<p>Published in National Newspaper</p>
-
-<div class="citation apa">
-Author Name. (2026). The Economics of Modern Warfare. National Newspaper.
-</div>
-
-<div class="citation mla">
-Author Name. "The Economics of Modern Warfare." National Newspaper, 2026.
-</div>
-
-</div>
-
-
-<div class="card">
-
-<a href="https://example.com/article2" target="_blank">
-Energy Security and Global Conflict
-</a>
-
-<p>Published in National Newspaper</p>
-
-<div class="citation apa">
-Author Name. (2025). Energy Security and Global Conflict. National Newspaper.
-</div>
-
-<div class="citation mla">
-Author Name. "Energy Security and Global Conflict." National Newspaper, 2025.
-</div>
-
-</div>
-
-</div>
-
-
-<!-- RESEARCH PAPERS -->
-
-<div class="section" id="research">
-
-<h2>Research Papers</h2>
-
-<div class="logo-row">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Springer_logo.svg">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Elsevier_logo.svg">
-
-</div>
-
-
-<div class="card">
-
-<a href="paper1.pdf" target="_blank">
-Defense Economics and Strategic Deterrence
-</a>
-
-<p>International Journal of Economics</p>
-
-<a href="paper1.pdf" download>Download PDF</a>
-
-<div class="citation apa">
-Author Name. (2025). Defense Economics and Strategic Deterrence. International Journal of Economics.
-</div>
-
-<div class="citation mla">
-Author Name. "Defense Economics and Strategic Deterrence." International Journal of Economics, 2025.
-</div>
-
-</div>
-
-
-<div class="card">
-
-<a href="paper2.pdf" target="_blank">
-Geopolitics of Energy Supply Chains
-</a>
-
-<p>Global Policy Review</p>
-
-<a href="paper2.pdf" download>Download PDF</a>
-
-<div class="citation apa">
-Author Name. (2024). Geopolitics of Energy Supply Chains. Global Policy Review.
-</div>
-
-<div class="citation mla">
-Author Name. "Geopolitics of Energy Supply Chains." Global Policy Review, 2024.
-</div>
-
-</div>
-
-</div>
-
-
-<!-- CITATION STYLE -->
-
-<div class="section">
-
-<h2>Citation Style</h2>
-
-<button onclick="showAPA()">APA</button>
-<button onclick="showMLA()">MLA</button>
-
-</div>
-
-
-<!-- ABOUT AUTHOR -->
-
-<div class="section" id="about">
-
-<h2>About the Author</h2>
-
-<div class="about">
-
-<img src="author.jpg" alt="Author Photo">
-
-<p>
-
-This author publishes analytical articles in national newspapers and
-academic research papers on economics, geopolitics, and defense economics.
-
-His work focuses on the economic drivers of conflict, global strategic
-policy, and energy security.
-
-</p>
-
-</div>
-
-</div>
-
-
-<!-- FOOTER -->
 
 <footer>
-
-<p>© 2026 Author Name</p>
-
-<p>
-Articles published in national newspapers and academic journals.
-All rights reserved.
-</p>
-
+  <p>© 2026 Student Voices Magazine | Published Monthly</p>
 </footer>
 
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+    <br>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
 
 <script>
+  function openArticle(title, text) {
+    document.getElementById("modal").style.display = "flex";
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalText").innerText = text;
+  }
 
-/ BURGER MENU /
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
 
-function toggleMenu(){
-
-document.getElementById("menu").classList.toggle("show");
-
-}
-
-
-/ SEARCH FUNCTION /
-
-function searchContent(){
-
-let input=document.getElementById("searchInput").value.toLowerCase();
-
-let cards=document.querySelectorAll(".card");
-
-cards.forEach(card=>{
-
-let text=card.innerText.toLowerCase();
-
-if(text.includes(input)){
-
-card.style.display="block";
-
-}else{
-
-card.style.display="none";
-
-}
-
-});
-
-}
-
-
-/ CITATION STYLE */
-
-function showAPA(){
-
-document.querySelectorAll(".citation").forEach(c=>c.style.display="none");
-
-document.querySelectorAll(".apa").forEach(c=>c.style.display="block");
-
-}
-
-function showMLA(){
-
-document.querySelectorAll(".citation").forEach(c=>c.style.display="none");
-
-document.querySelectorAll(".mla").forEach(c=>c.style.display="block");
-
-}
-
+  function submitForm(e) {
+    e.preventDefault();
+    alert("Article submitted! We will review it soon.");
+  }
 </script>
 
-
 </body>
-
 </html>
