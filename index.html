@@ -1,268 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Student Voices Magazine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Voices Magazine</title>
 
-  <style>
-    :root {
-      --maroon: #800000;
-      --light: #ffffff;
-      --paper: #fdfaf6;
-      --shadow: rgba(0,0,0,0.1);
-    }
+<style>
+:root {
+  --maroon: #6b0000;
+  --accent: #a52a2a;
+  --paper: #fdfaf6;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Georgia", serif;
-    }
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: #fafafa;
+  color: #222;
+}
 
-    body {
-      background: var(--light);
-      color: #333;
-    }
+/* HEADER */
+header {
+  background: var(--maroon);
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
 
-    header {
-      background: var(--maroon);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      letter-spacing: 1px;
-    }
+nav {
+  background: #4b0000;
+  padding: 10px;
+  text-align: center;
+}
 
-    nav {
-      background: #5c0000;
-      padding: 10px;
-      text-align: center;
-    }
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
 
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* HERO */
+.hero {
+  padding: 70px 20px;
+  background: linear-gradient(to right, #6b0000, #a52a2a);
+  color: white;
+  text-align: center;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+.hero h1 {
+  font-size: 3rem;
+}
 
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: linear-gradient(to right, #800000, #a52a2a);
-      color: white;
-    }
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+/* FEATURED */
+.featured {
+  background: white;
+  padding: 25px;
+  border-left: 6px solid var(--maroon);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
 
-    .container {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
 
-    h2 {
-      color: var(--maroon);
-      margin-bottom: 20px;
-    }
+.card {
+  background: var(--paper);
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    /* Paper Cards */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.card:hover {
+  transform: translateY(-5px);
+}
 
-    .card {
-      background: var(--paper);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px var(--shadow);
-      cursor: pointer;
-      transition: 0.3s;
-      position: relative;
-    }
+.tag {
+  font-size: 0.7rem;
+  background: var(--maroon);
+  color: white;
+  padding: 3px 8px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
 
-    .card:hover {
-      transform: translateY(-5px) scale(1.02);
-    }
+/* ISSUE */
+.issue {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+}
 
-    .card h3 {
-      color: var(--maroon);
-      margin-bottom: 10px;
-    }
+/* ABOUT */
+.about {
+  background: #f4f4f4;
+  padding: 30px;
+  border-radius: 10px;
+}
 
-    .card p {
-      font-size: 0.9rem;
-    }
+/* SUBMISSION */
+.submit-box {
+  background: white;
+  padding: 20px;
+  border-left: 5px solid var(--maroon);
+}
 
-    /* About */
-    .about {
-      background: #f4f4f4;
-      padding: 40px;
-      border-radius: 10px;
-    }
+/* FOOTER */
+footer {
+  background: var(--maroon);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
 
-    /* Form */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
 
-    input, textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    button {
-      background: var(--maroon);
-      color: white;
-      border: none;
-      padding: 12px;
-      cursor: pointer;
-      font-size: 1rem;
-      border-radius: 5px;
-    }
-
-    button:hover {
-      background: #a52a2a;
-    }
-
-    footer {
-      background: var(--maroon);
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 600px;
-    }
-
-  </style>
+.modal-content {
+  background: white;
+  padding: 25px;
+  max-width: 600px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>Student Voices Magazine</h1>
-  <p>Monthly Student Opinions & Perspectives</p>
+<h1>Student Voices Magazine</h1>
+<p>Monthly Student Opinion Publication</p>
 </header>
 
 <nav>
-  <a href="#articles">Articles</a>
-  <a href="#submit">Submit</a>
-  <a href="#about">About</a>
+<a href="#home">Home</a>
+<a href="#articles">Articles</a>
+<a href="#issues">Issues</a>
+<a href="#submit">Submit</a>
+<a href="#about">About</a>
 </nav>
 
 <section class="hero">
-  <h1>Speak. Write. Inspire.</h1>
-  <p>Your voice matters. Published monthly.</p>
+<h1>Speak. Write. Inspire.</h1>
+<p>Selected writers receive a published copy of the magazine.</p>
 </section>
 
-<div class="container" id="articles">
-  <h2>Latest Articles</h2>
+<div class="container">
 
-  <div class="cards">
-    <div class="card" onclick="openArticle('The Future of Education', 'Students are redefining learning...')">
-      <h3>The Future of Education</h3>
-      <p>Students are redefining learning...</p>
-    </div>
+<!-- FEATURED -->
+<div class="featured">
+<h2>Featured Article</h2>
+<h3 onclick="openArticle('The Power of Youth','Young people are reshaping the global conversation. Their ideas, activism, and writing are redefining the future...')" style="cursor:pointer;">
+The Power of Youth
+</h3>
+<p>By Editorial Team</p>
+</div>
 
-    <div class="card" onclick="openArticle('Climate & Youth', 'Young voices on climate change...')">
-      <h3>Climate & Youth</h3>
-      <p>Young voices on climate change...</p>
-    </div>
+<!-- ARTICLES -->
+<h2 id="articles">Latest Articles</h2>
 
-    <div class="card" onclick="openArticle('Social Media Impact', 'How social media shapes opinions...')">
-      <h3>Social Media Impact</h3>
-      <p>How social media shapes opinions...</p>
-    </div>
+<div class="cards">
+  <div class="card" onclick="openArticle('Climate Responsibility','Youth must act now to address climate change before it becomes irreversible.')">
+    <div class="tag">Opinion</div>
+    <h3>Climate Responsibility</h3>
+    <p>By Ali</p>
+  </div>
+
+  <div class="card" onclick="openArticle('Education Crisis','Education systems must evolve to meet modern challenges.')">
+    <div class="tag">Politics</div>
+    <h3>Education Crisis</h3>
+    <p>By Sara</p>
+  </div>
+
+  <div class="card" onclick="openArticle('Digital Generation','Social media is shaping how young people think and engage.')">
+    <div class="tag">Culture</div>
+    <h3>Digital Generation</h3>
+    <p>By Ahmed</p>
   </div>
 </div>
 
-<div class="container" id="submit">
-  <h2>Submit Your Article</h2>
+<!-- ISSUES -->
+<h2 id="issues">Monthly Issues</h2>
 
-  <form onsubmit="submitForm(event)">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <input type="text" placeholder="Article Title" required>
-    <textarea rows="6" placeholder="Write your article here..." required></textarea>
-    <button type="submit">Submit Article</button>
-  </form>
-
-  <p style="margin-top:10px;">Selected writers will receive a published copy of the magazine.</p>
+<div class="issue">
+<h3>March 2026</h3>
+<p>Theme: Youth & Change</p>
 </div>
 
-<div class="container" id="about">
-  <h2>About Us</h2>
+<div class="issue">
+<h3>February 2026</h3>
+<p>Theme: Education Reform</p>
+</div>
 
-  <div class="about">
-    <p>
-      Student Voices Magazine is a monthly publication dedicated to showcasing
-      student opinions, ideas, and perspectives from across the world.
-      We believe in empowering youth through writing and dialogue.
-    </p>
-  </div>
+<!-- SUBMIT -->
+<h2 id="submit">Submit Your Article</h2>
+
+<div class="submit-box">
+<p>We welcome submissions from students worldwide.</p>
+
+<iframe 
+  src="YOUR_GOOGLE_FORM_EMBED_LINK"
+  width="100%" 
+  height="650" 
+  frameborder="0">
+</iframe>
+
+<p>Selected writers will receive a published copy of the magazine.</p>
+</div>
+
+<!-- ABOUT -->
+<h2 id="about">About Us</h2>
+
+<div class="about">
+<p>
+Student Voices Magazine is a student-led monthly publication dedicated to sharing opinions, ideas, and perspectives from young writers around the world.  
+We aim to empower students through writing and meaningful dialogue.
+</p>
+</div>
+
 </div>
 
 <footer>
-  <p>© 2026 Student Voices Magazine | Published Monthly</p>
+<p>© 2026 Student Voices Magazine | Published Monthly</p>
 </footer>
 
-<!-- Modal -->
+<!-- MODAL -->
 <div class="modal" id="modal">
-  <div class="modal-content">
-    <h2 id="modalTitle"></h2>
-    <p id="modalText"></p>
-    <br>
-    <button onclick="closeModal()">Close</button>
-  </div>
+<div class="modal-content">
+<h2 id="modalTitle"></h2>
+<p id="modalText"></p>
+<button onclick="closeModal()">Close</button>
+</div>
 </div>
 
 <script>
-  function openArticle(title, text) {
-    document.getElementById("modal").style.display = "flex";
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalText").innerText = text;
-  }
+function openArticle(title, text) {
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalText").innerText = text;
+}
 
-  function closeModal() {
-    document.getElementById("modal").style.display = "none";
-  }
-
-  function submitForm(e) {
-    e.preventDefault();
-    alert("Article submitted! We will review it soon.");
-  }
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
 </script>
 
 </body>
