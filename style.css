@@ -1,9 +1,13 @@
+/* ===== ROOT COLORS ===== */
 :root {
-  --maroon: #6b0000;
+  --maroon-dark: #1a0000;
+  --maroon-mid: #4b0000;
+  --maroon-light: #8b0000;
   --accent: #a52a2a;
   --paper: #fdfaf6;
 }
 
+/* ===== GLOBAL ===== */
 body {
   margin: 0;
   font-family: "Georgia", serif;
@@ -11,46 +15,116 @@ body {
   color: #222;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
-  background: var(--maroon);
+  background: var(--maroon-mid);
   color: white;
   text-align: center;
   padding: 25px;
+  letter-spacing: 1px;
 }
 
+/* ===== NAVBAR ===== */
 nav {
-  background: #4b0000;
-  padding: 10px;
+  background: #2b0000;
+  padding: 12px;
   text-align: center;
 }
 
 nav a {
   color: white;
-  margin: 0 15px;
+  margin: 0 18px;
   text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
-/* HERO */
+nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ===== HERO SECTION ===== */
 .hero {
-  padding: 80px 20px;
-  background: linear-gradient(to right, #6b0000, #a52a2a);
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #1a0000, #5a0000, #8b0000);
   color: white;
   text-align: center;
 }
 
 .hero h1 {
   font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 
-/* CONTAINER */
+.hero p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: white;
+  color: #4b0000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background: #eee;
+}
+
+/* ===== CONTAINER ===== */
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
-/* CARDS */
+/* ===== GRADIENT SECTION (LIKE YOUR IMAGE) ===== */
+.gradient-section {
+  background: linear-gradient(135deg, #1a0000, #4b0000, #8b0000);
+  color: #f5f5f5;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.gradient-section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+/* ===== CHECKLIST ===== */
+.checklist {
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+}
+
+.checklist p {
+  font-size: 1.1rem;
+  margin: 18px 0;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* Check icon */
+.checklist p::before {
+  content: "✔";
+  margin-right: 12px;
+  color: #d3d3d3;
+  font-weight: bold;
+}
+
+/* ===== CARDS ===== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -63,51 +137,59 @@ nav a {
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .tag {
   font-size: 0.7rem;
-  background: var(--maroon);
+  background: var(--maroon-mid);
   color: white;
-  padding: 3px 8px;
+  padding: 4px 8px;
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  border-radius: 3px;
 }
 
-/* BUTTON */
-.btn {
-  background: var(--maroon);
-  color: white;
-  padding: 12px 20px;
-  display: inline-block;
-  text-decoration: none;
-  margin-top: 15px;
+/* ===== ISSUE BOX ===== */
+.issue {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
 }
 
-/* ABOUT */
+/* ===== SUBMISSION BOX ===== */
+.submit-box {
+  background: white;
+  padding: 20px;
+  border-left: 5px solid var(--maroon-mid);
+}
+
+/* ===== ABOUT (LIGHT SECTION IF NEEDED) ===== */
 .about {
   background: #f4f4f4;
   padding: 30px;
   border-radius: 10px;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
-  background: var(--maroon);
+  background: var(--maroon-mid);
   color: white;
   text-align: center;
   padding: 20px;
+  margin-top: 40px;
 }
 
-/* MODAL */
+/* ===== MODAL ===== */
 .modal {
   display: none;
   position: fixed;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -118,4 +200,16 @@ footer {
   background: white;
   padding: 25px;
   max-width: 600px;
+  border-radius: 6px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .gradient-section h2 {
+    font-size: 2rem;
+  }
 }
